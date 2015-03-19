@@ -354,6 +354,8 @@
     <Content Include="Views\Cliente\Delete.cshtml" />
     <Content Include="Views\Enderecos\Index.cshtml" />
     <Content Include="Views\Enderecos\Create.cshtml" />
+    <Content Include="Views\Enderecos\Details.cshtml" />
+    <Content Include="Views\Enderecos\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

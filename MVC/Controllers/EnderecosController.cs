@@ -26,7 +26,7 @@ namespace MVC.Controllers
         // GET: Enderecos/Details/5
         public ActionResult Details(Guid id)
         {
-            return View(_cliente.Find(id));//errado
+            return View(_cliente.FindEndereco(id));
         }
 
         // GET: Enderecos/Create
@@ -57,13 +57,12 @@ namespace MVC.Controllers
         // GET: Enderecos/Edit/5
         public ActionResult Edit(Guid id)
         {
-            
-            return View();
+            return View(_cliente.FindEndereco(id));
         }
 
         // POST: Enderecos/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(int id, Model.Endereco endereco)
         {
             try
             {

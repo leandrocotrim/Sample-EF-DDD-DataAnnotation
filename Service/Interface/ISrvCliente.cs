@@ -9,5 +9,6 @@ namespace Service
     public interface ISrvCliente : ISrvBase
     {
         //Metodos não genericos
+        Model.Endereco FindEndereco(Guid id);
     }
 }

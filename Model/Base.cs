@@ -19,7 +19,7 @@ namespace Model
         [Key]
         [Column("id")]
         public Guid Id { get; set; }
-        [Editable(false)]
+     
         [Column("d_cadastro")]
         public DateTime DataCadastro { get; set; }
     }
