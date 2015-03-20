@@ -10,5 +10,7 @@ namespace Service
     {
         //Metodos não genericos
         Model.Endereco FindEndereco(Guid id);
+        void UpdateEndereco(Model.Endereco endereco);
+        void RemoveEndereco(Guid id);
     }
 }

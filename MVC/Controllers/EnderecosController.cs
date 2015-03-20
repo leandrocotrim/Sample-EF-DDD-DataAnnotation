@@ -62,13 +62,19 @@ namespace MVC.Controllers
 
         // POST: Enderecos/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, Model.Endereco endereco)
+        public ActionResult Edit(Guid id, Model.Endereco endereco)
         {
             try
             {
-                // TODO: Add update logic here
+                var model = _cliente.FindEndereco(id);
+                model.Bairro = endereco.Bairro;
+                model.Cidade = endereco.Cidade;
+                model.Numero = endereco.Numero;
+                model.Rua = endereco.Rua;
 
-                return RedirectToAction("Index");
+                _cliente.UpdateEndereco(model);
+
+                return RedirectToAction("Index", new { idCliente = endereco.IdCliente });
             }
             catch
             {
@@ -77,20 +83,19 @@ namespace MVC.Controllers
         }
 
         // GET: Enderecos/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult Delete(Guid id)
         {
-            return View();
+            return View(_cliente.FindEndereco(id));
         }
 
         // POST: Enderecos/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(Guid id, Model.Endereco endereco)
         {
             try
             {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
+                _cliente.RemoveEndereco(id);
+                return RedirectToAction("Index", new { idCliente = endereco.IdCliente });
             }
             catch
             {

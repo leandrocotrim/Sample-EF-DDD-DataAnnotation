@@ -21,6 +21,8 @@ namespace Model
         public Guid Id { get; set; }
      
         [Column("d_cadastro")]
+        [DataType(DataType.DateTime)]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime DataCadastro { get; set; }
     }
 }

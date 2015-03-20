@@ -11,7 +11,8 @@ namespace Service
         //Toda a parte do cliente nessa partial
 
         private Repository.IRepCliente _repClient;
-        public SrvCliente() { _repClient = new Repository.RepCliente(); }
+        private Repository.IRepEndereco _repEndereco;
+        public SrvCliente() { _repClient = new Repository.RepCliente(); _repEndereco = new Repository.RepEndereco(); }
 
         public void Add(Model.Cliente cliente)
         {

@@ -11,9 +11,18 @@ namespace Service
     {
         //Toda a parte do endereço nessa partial     
         public Model.Endereco FindEndereco(Guid id)
-        {
-            IRepEndereco _repEndereco = new RepEndereco();
+        {            
             return _repEndereco.Find(id);
+        }
+        public void UpdateEndereco(Model.Endereco endereco)
+        {
+            _repEndereco.Update(endereco);
+            _repEndereco.Save();
+        }
+        public void RemoveEndereco(Guid id)
+        {
+            _repEndereco.Remove(id);
+            _repEndereco.Save();
         }
     }
 }
